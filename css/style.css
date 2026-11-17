@@ -526,3 +526,112 @@ body {
 
     box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
 }
+
+
+
+/* ===== Responsive Design ===== */
+
+/* General Settings */
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    max-width: 100%;
+    margin: 0;
+    overflow-x: hidden;
+}
+
+/* Images and Videos */
+img,
+video {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Containers */
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+/* Tablets */
+@media (max-width: 992px) {
+    .container {
+        width: 95%;
+    }
+
+    .row {
+        flex-wrap: wrap;
+    }
+}
+
+/* Mobile Phones */
+@media (max-width: 768px) {
+
+    .container {
+        width: 100%;
+        padding: 0 15px;
+    }
+
+    .row {
+        flex-direction: column;
+    }
+
+    .grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hero {
+        padding: 40px 15px;
+        text-align: center;
+    }
+
+    .hero h1 {
+        font-size: 28px;
+    }
+
+    .hero p {
+        font-size: 16px;
+    }
+
+    .cards {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .card {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    input,
+    textarea,
+    select {
+        max-width: 100%;
+    }
+
+    button {
+        max-width: 100%;
+    }
+}
+
+/* Small Mobile Phones */
+@media (max-width: 480px) {
+
+    .hero h1 {
+        font-size: 24px;
+    }
+
+    .hero p {
+        font-size: 14px;
+    }
+
+    .container {
+        padding: 0 10px;
+    }
+}
