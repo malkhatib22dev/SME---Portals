@@ -1,0 +1,633 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #ffffff;
+}
+
+.header {
+    width: 100%;
+    background-color: #ffffff;
+    padding: 35px 0;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+    max-width: 1200px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo img {
+    width: 150px;
+    height: auto;
+
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: #222222;
+    font-size: 16px;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.navbar a:hover {
+    color: #00a99d;
+}
+
+/* Hero Section */
+.hero {
+    width: 100%;
+    min-height: 600px;
+    background-color: #f5f9fc;
+
+    display: flex;
+    align-items: center;
+    padding: 80px 0;
+
+    background-image: url(../imegas/pattern.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+
+/* Hero Container */
+.hero-container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 50px;
+}
+
+/* Text Content */
+.hero-content h1 {
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 1.3;
+    color: #142b49;
+    margin-bottom: 25px;
+}
+
+.hero-content p {
+    font-size: 18px;
+    line-height: 1.8;
+    color: #666666;
+    margin-bottom: 30px;
+}
+
+/* Hero Button */
+.hero-btn {
+    display: inline-block;
+    background-color: #00a99d;
+    color: #fff;
+
+    padding: 15px 35px;
+    border-radius: 8px;
+
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 600;
+
+    transition: 0.3s ease;
+
+}
+
+.hero-btn:hover {
+    background-color: #008f85;
+    transform: translateY(-3px);
+}
+
+/* Hero Image */
+.hero-image {
+    flex: 1;
+}
+
+.hero-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+
+/* جعل التنيسق متجاوبا مع الجوال  */
+@media (max-width: 768px) {
+    .hero {
+        padding: 50px 0;
+    }
+
+    .hero-container {
+        /* تحويل ترتيب النص من افقي الى عمودي بحيث يظهر النص فوق والصورة تحته */
+        flex-direction: column;
+
+        text-align: center;
+
+        gap: 30px;
+    }
+
+    .hero-content h1 {
+        font-size: 32px;
+    }
+
+    .hero-content p {
+        font-size: 16px;
+    }
+
+    .hero-image {
+        width: 100%;
+    }
+}
+
+/* Services Section */
+.services {
+    width: 100%;
+    padding: 90px 0;
+    background-color: #fff;
+}
+
+.services-container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Section Heading */
+
+.section-heading {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.section-heading h2 {
+    font-size: 38px;
+    font-weight: 700;
+    color: #142b49;
+    margin-bottom: 15px;
+}
+
+.section-heading p {
+    font-size: 17px;
+    color: #666666;
+    line-height: 1.8;
+
+}
+
+/* Services Grid */
+
+.services-grid {
+    /* نستخدمه لما نحتاج نرتب العناصر ضمن صفوف واعمدة  */
+    display: grid;
+
+
+    /* يعني رح يكون عندنا 4 بطاقات في صف واح , كل بطاقة تأخذ حصة متساوية من العرض المتاح  */
+    grid-template-columns: repeat(4, 1fr);
+
+    /* بضيف مسافة 25 بكسل بين البطاقات افقيا وعموديا  */
+    gap: 25px;
+}
+
+/* Services Card */
+.service-card {
+    background-color: #fff;
+    padding: 35px 25px;
+
+    /* بتخلي زاوية البطاقة مستديرة بدل ما تكون حادة */
+    border-radius: 15px;
+
+    text-align: center;
+    border: 1px solid #eeeeee;
+
+
+    /* 0 الازاحة الافقية للظل 
+    5px الازاحة العامودية 
+    20px مقدار تمويه الظل 
+    rgba(0, 0, 0, 0.05); لون اسود بشفافية %5 */
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+
+    /* التغييرات تتم تدريجيا خلال 0.3 ثانية */
+    transition: 0.3s ease;
+
+}
+
+/* Icons */
+
+.service-card .material-symbols-outlined {
+    font-size: 48px;
+    color: #008f85;
+    display: inline-block;
+    margin-bottom: 25px;
+
+}
+
+/* Card Title */
+.service-card h3 {
+    font-size: 21px;
+    color: #142b49;
+    margin-bottom: 15px;
+}
+
+/* Card Description */
+.service-card p {
+    font-size: 15px;
+    color: #666;
+    line-height: 1.7;
+}
+
+/* Hover Effect */
+.service-card:hover {
+    transform: translateY(-10px);
+
+
+    /* الظل يصير اوضح */
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+
+
+    /* لون الحدود يتحول للاخضر */
+    border-color: #00a99d;
+}
+
+/* Tablet */
+@media (max-width: 992px) {
+
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+    .services {
+        padding: 60px 0;
+
+    }
+
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .section-heading h2 {
+        font-size: 30px;
+    }
+
+    .service-card {
+        padding: 30px 20px;
+    }
+}
+
+/* Statistics Section */
+
+.stats {
+    width: 100%;
+
+    /* يضيف 90 بكسل أعلى وأسفل القسم، وصفر يمين ويسار. */
+    padding: 90px 0;
+    background-color: #102d42;
+
+}
+
+.stats-container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Heading */
+.stats-heading {
+    text-align: center;
+    margin-bottom: 55px;
+}
+
+.stats-heading h2 {
+    font-size: 38px;
+    color: #fff;
+    margin-bottom: 15px;
+}
+
+.stats-heading p {
+    font-size: 18px;
+    color: #b8c9d5;
+}
+
+/* Grid */
+
+.stats-grid {
+
+    /* فعّل نظام الشبكة. */
+    display: grid;
+
+    /* repeat(4, 1fr) ينشئ أربعة أعمدة متساوية. */
+    grid-template-columns: repeat(4, 1fr);
+}
+
+/* Single Statistic */
+.stat-box {
+    text-align: center;
+    padding: 20px;
+}
+
+.stat-box h3 {
+    font-size: 52px;
+    font-weight: 800;
+    color: #36d2bb;
+    margin-bottom: 12px;
+}
+
+.stat-box p {
+    font-size: 17px;
+    color: #fff;
+    line-height: 1.6;
+
+}
+
+/* Tablet  */
+@media (max-width: 992px) {
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+
+/* Mobile */
+@media (max-width: 600px) {
+    .stats {
+        padding: 60px 0;
+    }
+
+    .stats-heading h2 {
+        font-size: 30px;
+    }
+
+    .stats-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .stat-box h3 {
+        font-size: 42px;
+    }
+}
+
+/* Our Clients Section */
+
+.clients {
+    width: 100%;
+    padding: 90px 0;
+    background-color: #f7f9fc;
+}
+
+/* Main Container */
+
+.clients-container {
+    width: 80%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Section Heading */
+.clients-heading {
+    text-align: center;
+    margin-bottom: 50px;
+
+}
+
+.clients-heading h2 {
+    font-size: 38px;
+    font-weight: 700;
+    color: #142b49;
+    margin-bottom: 15px;
+}
+
+.clients-heading p {
+    font-size: 18px;
+    font-weight: 700;
+    color: #666666;
+    line-height: 1.8;
+}
+
+/* Clients Grid */
+.clients-grid {
+
+    /* يحوّل الحاوية إلى شبكة. */
+    display: grid;
+
+    /* repeat(3, 1fr) ينشئ ثلاثة أعمدة متساوية. */
+    grid-template-columns: repeat(3, 1fr);
+
+    /* gap: 25px يضيف مسافة بين البطاقات. */
+    gap: 25px;
+}
+
+/* Client Card */
+
+.client-card {
+    background-color: #ffffff;
+    border: 1px solid #eeeeee;
+    border-radius: 12px;
+
+    min-height: 160px;
+    padding: 25px;
+
+    display: flex;
+
+    /* align-items: center يوسّط الصورة عموديًا. */
+    align-items: center;
+
+    /* justify-content: center يوسّط الصورة أفقيًا. */
+    justify-content: center;
+
+    transition: 0.3s ease;
+}
+
+/* Client Logo */
+.client-card img {
+    width: 100%;
+    max-width: 180px;
+    height: 90px;
+
+    /* اخترنا contain لأنها الأنسب للشعارات، وبتحافظ على أبعادها الأصلية وبتعرضها كاملة داخل المساحة المحددة. */
+    object-fit: contain;
+    display: block;
+
+    transition: 0.3s ease;
+}
+
+/* Hover Effects */
+.client-card:hover {
+    transform: translateY(-5px);
+
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+}
+
+.client-card:hover img {
+    transform: scale(1.05);
+}
+
+/* Tablet */
+
+@media (max-width: 992px) {
+    .clients-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Mobile */
+@media(max-width: 600px) {
+    .clients {
+        padding: 60px 0;
+    }
+
+    .clients-heading h2 {
+        font-size: 30px;
+    }
+
+    .client-card {
+        min-height: 110px;
+        padding: 12px;
+    }
+
+    .client-card img {
+        max-width: 130px;
+        height: 65px;
+    }
+}
+
+
+/* =========================
+   Testimonials Section
+========================= */
+
+.testimonials {
+    width: 100%;
+    padding: 90px 0;
+    background-color: #ffffff;
+}
+
+.testimonials-container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Heading */
+
+.testimonials-heading {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.testimonials-heading h2 {
+    font-size: 38px;
+    font-weight: 700;
+    color: #142b49;
+    margin-bottom: 15px;
+}
+
+.testimonials-heading p {
+    font-size: 17px;
+    color: #666666;
+    line-height: 1.8;
+}
+
+/* Grid */
+
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+}
+
+/* Card */
+
+.testimonial-card {
+    background-color: #f7f9fc;
+    border-radius: 15px;
+    padding: 35px;
+
+    border: 1px solid #eeeeee;
+
+    transition: 0.3s ease;
+}
+
+/* Stars */
+
+.testimonial-stars {
+    font-size: 24px;
+    color: #f5b301;
+
+
+    /* خاصية letter-spacing بتتحكم بالمسافة بين الأحرف والرموز، وهون استخدمناها لإضافة مسافة بين النجوم. */
+    letter-spacing: 4px;
+    margin-bottom: 20px;
+}
+
+/* Review Text */
+
+.testimonial-text {
+    font-size: 17px;
+    line-height: 1.9;
+    color: #555555;
+    margin-bottom: 30px;
+}
+
+/* User Information */
+
+.testimonial-user {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.testimonial-user img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+
+    /* بتخلي الصورة تملأ الإطار الدائري بدون تشويه، وممكن تقص جزءًا من أطرافها. */
+    object-fit: cover;
+}
+
+/* User Name */
+
+.testimonial-info h3 {
+    font-size: 18px;
+    color: #142b49;
+    margin-bottom: 5px;
+}
+
+/* User Position */
+
+.testimonial-info span {
+    font-size: 14px;
+    color: #777777;
+}
+
+/* Hover */
+
+.testimonial-card:hover {
+    transform: translateY(-6px);
+
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+}
